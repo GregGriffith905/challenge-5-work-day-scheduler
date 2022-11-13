@@ -1,4 +1,4 @@
-for (var i = 9; i<=17; i++){  //loop to create html elements for timeslots from 9am - 5pm 
+for (var i = 9; i<=17; i++){  //loop to create html elements for timeblocks from 9am - 5pm 
   var hour = $("<div>");      //create elements
   var hourClass = $("<div>");
   var textArea = $("<textArea>");
@@ -6,8 +6,11 @@ for (var i = 9; i<=17; i++){  //loop to create html elements for timeslots from 
   var iClass = $("<i>");
 
   hour.attr("id", "hour-"+i);    //add attributes to html elements
-  hour.attr("class", "row time-block past");
-  
+
+  if (moment().format("H") > i) hour.attr("class", " row time-block past");   //determine colour of block
+  else if (moment().format("H") == i) hour.attr("class", "row time-block present");
+  else if (moment().format("H") < i) hour.attr("class", "row time-block future");
+
 
   hourClass.attr("class", "col-2 col-md-1 hour text-center py-3")
   if (i < 12) hourClass.text(i+"AM");  //if else statement to display 24hr time as am/pm
@@ -33,6 +36,7 @@ for (var i = 9; i<=17; i++){  //loop to create html elements for timeslots from 
   //console.log(hour);
   //console.log(hourClass.text());
   //console.log(hour.rows);
+  console.log(moment().format("H"));
 }
 
 
