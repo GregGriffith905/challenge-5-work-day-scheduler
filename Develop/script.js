@@ -1,3 +1,42 @@
+for (var i = 9; i<=17; i++){  //loop to create html elements for timeslots from 9am - 5pm 
+  var hour = $("<div>");      //create elements
+  var hourClass = $("<div>");
+  var textArea = $("<textArea>");
+  var button  = $("<button>");
+  var iClass = $("<i>");
+
+  hour.attr("id", "hour-"+i);    //add attributes to html elements
+  hour.attr("class", "row time-block past");
+  
+
+  hourClass.attr("class", "col-2 col-md-1 hour text-center py-3")
+  if (i < 12) hourClass.text(i+"AM");  //if else statement to display 24hr time as am/pm
+  else if (i === 12) hourClass.text(i +"PM")
+  else hourClass.text((i-12)+"PM");
+
+  textArea.attr("class", "col-8 col-md-10 description");
+  textArea.attr("rows","3");
+
+  button.attr("class", "btn saveBtn col-2 col-md-1");
+  button.attr("aria-label", "save");
+
+  iClass.attr("class", "fas fa-save" );
+  iClass.attr("aria-hidden", "true");
+
+  button.append(iClass);      //load html elements to page
+  hour.append(hourClass);
+  hour.append(textArea);
+  hour.append(button);
+  $("#container").append(hour);
+
+
+  //console.log(hour);
+  //console.log(hourClass.text());
+  //console.log(hour.rows);
+}
+
+
+
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
@@ -22,7 +61,7 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  
+
   // TODO: Add code to display the current date in the header of the page.
   $("#currentDay").text(currentDate.format("dddd, MMMM Do"));
 
