@@ -66,9 +66,9 @@ $(function () {
   $("button").click(function(){   //function to handle save button click
     var buttonParent = this.parentNode;                                    //find parent timeBlock of button clicked
     var textInside = buttonParent.children[1].value;
-    if (saved[(this.id)-9]!=null) {
+    if (textInside!=null) {
       saved[(this.id)-9] = textInside;                                     //saved task to schedule array 
-      localStorage.setItem(buttonParent.id, saved[(this.id)-9]);           //saved task to localStorage
+      localStorage.setItem(buttonParent.id, textInside);                   //saved task to localStorage
     }
     console.log("new task @ " + buttonParent.id + ": " + saved[(this.id)-9]); 
     console.log(saved);  
