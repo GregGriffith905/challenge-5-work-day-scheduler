@@ -1,5 +1,17 @@
 # 05 Third-Party APIs: Work Day Scheduler
 
+## Goto submission
+Deployed Link:
+Github Repository:
+
+## Screenshots
+
+## About the app
+This is a calendar app which will allow a user to save tasks/events for each hour of the day.
+To add a task/event: type details in text box and click the save icon.
+To remove a task/event: delete details from text box and click the save icon.
+Text boxes will appear grey, red or green depending on whethere the hours is respectively in the past, present or future.
+
 ## Your Task
 
 Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
