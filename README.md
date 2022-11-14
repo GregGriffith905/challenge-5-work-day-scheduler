@@ -1,12 +1,17 @@
 # 05 Third-Party APIs: Work Day Scheduler
 
 ## Goto submission
-Deployed Link:
-Github Repository:
+
+Deployed Link: https://greggriffith905.github.io/challenge-5-work-day-scheduler/Develop/index.html
+
+Github Repository: https://github.com/GregGriffith905/challenge-5-work-day-scheduler
 
 ## Screenshots
 
+https://greggriffith905.github.io/challenge-5-work-day-scheduler/Assets/screenshot1.png
+
 ## About the app
+
 This is a calendar app which will allow a user to save tasks/events for each hour of the day.
 To add a task/event: type details in text box and click the save icon.
 To remove a task/event: delete details from text box and click the save icon.
