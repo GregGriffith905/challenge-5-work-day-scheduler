@@ -19,7 +19,7 @@ $(function () {
     // attribute of each time-block be used to do this?
 
     saved[i-9] = localStorage.getItem("timeBlock-"+i);    //load saved schedule items to array
-    if (saved[i-9] != null || saved[i-9] != "null" ) textArea.text(saved[i-9]);    //if !null then write item to screen
+    if (saved[i-9] != null) textArea.text(saved[i-9]);    //if !null then write item to screen
     console.log("loaded from storage: " + i + "H - " + saved[i-9]);
  
     // TODO: Add code to apply the past, present, or future class to each time
@@ -66,9 +66,10 @@ $(function () {
   $("button").click(function(){   //function to handle save button click
     var buttonParent = this.parentNode;                                    //find parent timeBlock of button clicked
     var textInside = buttonParent.children[1].value;
-    saved[(this.id)-9] = textInside;                                       //saved task to schedule array 
-    localStorage.setItem(buttonParent.id, saved[(this.id)-9]);             //saved task to localStorage
-
+    if (saved[(this.id)-9]!=null) {
+      saved[(this.id)-9] = textInside;                                     //saved task to schedule array 
+      localStorage.setItem(buttonParent.id, saved[(this.id)-9]);           //saved task to localStorage
+    }
     console.log("new task @ " + buttonParent.id + ": " + saved[(this.id)-9]); 
     console.log(saved);  
   });
