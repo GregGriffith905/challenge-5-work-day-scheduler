@@ -35,7 +35,7 @@ $(function () {
 
     hourClass.attr("class", "col-2 col-md-1 hour text-center py-3")  //add attributes to hour column 
     if (i < 12) hourClass.text(i+"AM");                              //if else statement to display 24hr time as am/pm
-    else if (i === 12) hourClass.text(i +"PM")
+    else if (i == 12) hourClass.text(i +"PM")
     else hourClass.text((i-12)+"PM");
 
     textArea.attr("class", "col-8 col-md-10 description");  //add attributes to textArea
@@ -64,13 +64,13 @@ $(function () {
   // useful when saving the description in local storage?  
 
   $("button").click(function(){   //function to handle save button click
-    var buttonParent = this.parentNode;                                    //find parent timeBlock of button clicked
-    var textInside = buttonParent.children[1].value;
-    if (textInside!=null) {
-      saved[(this.id)-9] = textInside;                                     //saved task to schedule array 
-      localStorage.setItem(buttonParent.id, textInside);                   //saved task to localStorage
-    }
-    console.log("new task @ " + buttonParent.id + ": " + saved[(this.id)-9]); 
+    var buttonParent = this.parentNode;                                  //find parent timeBlock of button clicked
+    var textInside = buttonParent.children[1].value;                     //textInside of the timeblocks  
+    
+    saved[(this.id)-9] = textInside;                                     //saved task to schedule array 
+    localStorage.setItem(buttonParent.id, textInside);                   //saved task to localStorage
+    
+    console.log("new task @ " + buttonParent.id + ": " + textInside); 
     console.log(saved);  
   });
   
