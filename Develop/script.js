@@ -19,7 +19,7 @@ $(function () {
     // attribute of each time-block be used to do this?
 
     saved[i-9] = localStorage.getItem("timeBlock-"+i);    //load saved schedule items to array
-    if (saved[i-9] != null) textArea.text(saved[i-9]);    //if !null then write item to screen
+    if (saved[i-9] != null || saved[i-9] != "null" ) textArea.text(saved[i-9]);    //if !null then write item to screen
     console.log("loaded from storage: " + i + "H - " + saved[i-9]);
  
     // TODO: Add code to apply the past, present, or future class to each time
